@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      // the following JavaScript was sourced from jQuery.com
+      //Script for accordion with sortable menus
+      let h3Elements = [];
+      $(function () {
+        $("#accordion")
+          .accordion({
+            header: "> div > h3",
+          })
+          .sortable({
+            axis: "y",
+            handle: "h3",
+            stop: function (event, ui) {
+              // Refresh accordion to handle new order
+              $(this).accordion("refresh");
+              // Initialize the numbering on page load
+              updateNumbering();
+            },
+          });
+
+        // Update the numbering of the menus based on their order
+        function updateNumbering() {
+          $("#accordion h3").each(function (index) {
+            var clonedHeader = $(this).clone(); // create a clone of the header
+            var headerText = clonedHeader
+              .children() // select the index number element
+              .remove() // remove the index number element from the clone
+              .end() // select the clone again
+              .text(); // get the text of the header without the index number
+            clonedHeader.prepend("<span>" + (index + 1) + ". " + "</span>"); // add the index number to the clone
+            $(this).replaceWith(clonedHeader); // replace the original header with the modified clone
+          });
+          $("#accordion").accordion("destroy");
+          $("#accordion").accordion({
+            header: "> div > h3",
+          });
+        }
+
+        updateNumbering();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- The Header -->
+    <header>
+      <div class="pageHeader">
+        <div class="logoName">
+          <h1 class="logo">CRM</h1>
+          <h2 class="siteName">Customer Records Management</h2>
+        </div>
+        <div class="userAvatar">
+          <button id="login-button" class="loginBtn loginBtnContainer">
+            Log in
+          </button>
+          <button id="logout-button" class="loginBtn logoutBtnContainer">
+            Log out
+          </button>
+          <h2 class="userName" id="logInName"></h2>
+          <img class="avatarImg" src="/Icons/user-96.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <div class="mainBody">
+      <!-- Sidebar menu icons-->
+      <!-- herf="" navigation for all pages, span with class="label" to add the pop up icon name-->
+      <!-- Icons sourced form icons8.com-->
+      <div class="sideBar">
+        <a href="./home.html" class="image-container"
+          ><img src="/Icons/home-32.png" alt="Home page icon" /><span
+            class="label"
+            >HOME</span
+          ></a
+        >
+        <a href="./Staff.html" class="image-container"
+          ><img src="/Icons/customers-32.png" alt="Customer icon" /><span
+            class="label"
+            >STAFF</span
+          ></a
+        >
+        <a href="./projects.html" class="image-container"
+          ><img src="/Icons/folder-32.png" alt="Folder icon" /><span
+            class="label"
+            >PROJECTS</span
+          ></a
+        >
+        <a href="./about.html" class="image-container"
+          ><img src="/Icons/info-32.png" alt="About page icon" /><span
+            class="label"
+            >ABOUT</span
+          ></a
+        >
+        <a href="#contact" id="contact" class="image-container"
+          ><img src="/Icons/message-32.png" alt="Contact page icon" /><span
+            class="label"
+            >CONTACT</span
+          ></a
+        >
+      </div>
+      <!-- Log in form -->
+      <!-- No login name or password are required as there is no authentication action in the back end-->
+      <div class="login-form-wrapper">
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+          <button id="submit" type="button">Log in</button>
+        </form>
+      </div>
+      <div class="dashboards">
+        <!--The Dashboard div contains the customizable CRM elements-->
+        <div class="portlet">
+          <!-- Projects card with accordion menus that can be re structured (numbered 1- 5)-->
+          <!-- Accordion menus HTML and JS sourced from jQuery.com-->
+          <div class="card cardH2">
+            <h2 class="portlet-header">Projects</h2>
+            <div class="card" id="accordion">
+              <div class="group">
+                <h3>Wealth Builder</h3>
+                <div>
+                  <p>
+                    A project aimed at helping clients build long-term wealth
+                    through a diversified investment portfolio. Our team of
+                    financial experts will work with clients to develop a
+                    personalized investment plan that aligns with their
+                    financial goals and risk tolerance.
+                  </p>
+                </div>
+              </div>
+              <div class="group">
+                <h3>Sustainable Investments</h3>
+                <div>
+                  <p>
+                    This project focuses on investing in companies that
+                    prioritize environmental, social, and governance (ESG)
+                    factors. Our team of analysts will conduct thorough research
+                    to identify companies that are committed to sustainability
+                    and have strong financial fundamentals.
+                  </p>
+                </div>
+              </div>
+              <div class="group">
+                <h3>Retirement Planning</h3>
+                <div>
+                  <p>
+                    Our retirement planning project is designed to help clients
+                    prepare for a financially secure retirement. We'll work with
+                    clients to determine their retirement goals and develop a
+                    comprehensive plan to ensure they have the resources they
+                    need to retire comfortably.
+                  </p>
+                </div>
+              </div>
+              <div class="group">
+                <h3>Debt Reduction</h3>
+                <div>
+                  <p>
+                    This project is focused on helping clients reduce their debt
+                    and improve their credit scores. Our team of financial
+                    experts will work with clients to develop a customized debt
+                    repayment plan that fits their budget and helps them achieve
+                    their financial goals.
+                  </p>
+                </div>
+              </div>
+              <div class="group">
+                <h3>Real Estate Investing</h3>
+                <div>
+                  <p>
+                    Our real estate investing project is aimed at helping
+                    clients build wealth through real estate investments. We'll
+                    work with clients to identify investment opportunities that
+                    align with their financial goals and risk tolerance, and
+                    provide ongoing support to help them manage their
+                    investments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- The Footer -->
+    <footer>
+      <div class="pageFooter">
+        <div class="footerNav">
+          <nav>
+            <a href="./home.html">Home</a>
+            <a href="./Staff.html">Staff</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+          </nav>
+          <h4>&copy; Copyright Oenghus Walsh 2023</h4>
+        </div>
+      </div>
+    </footer>
+    <script src="/JavaScript/script.js"></script>
+  </body>
+</html>

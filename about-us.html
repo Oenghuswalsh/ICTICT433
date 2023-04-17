@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+  <body>
+    <!-- The Header -->
+    <header>
+      <div class="pageHeader">
+        <div class="logoName">
+          <h1 class="logo">CRM</h1>
+          <h2 class="siteName">Customer Records Management</h2>
+        </div>
+        <div class="userAvatar">
+          <button id="login-button" class="loginBtn loginBtnContainer">
+            Log in
+          </button>
+          <button id="logout-button" class="loginBtn logoutBtnContainer">
+            Log out
+          </button>
+          <h2 class="userName" id="logInName"></h2>
+          <img class="avatarImg" src="/Icons/user-96.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <div class="mainBody">
+      <!-- Sidebar menu icons-->
+      <!-- herf="" navigation for all pages, span with class="label" to add the pop up icon name-->
+      <!-- Icons sourced form icons8.com-->
+      <div class="sideBar">
+        <a href="./home.html" class="image-container"
+          ><img src="/Icons/home-32.png" alt="Home page icon" /><span
+            class="label"
+            >HOME</span
+          ></a
+        >
+        <a href="./Staff.html" class="image-container"
+          ><img src="/Icons/customers-32.png" alt="Customer icon" /><span
+            class="label"
+            >STAFF</span
+          ></a
+        >
+        <a href="./projects.html" class="image-container"
+          ><img src="/Icons/folder-32.png" alt="Folder icon" /><span
+            class="label"
+            >PROJECTS</span
+          ></a
+        >
+        <a href="./about.html" class="image-container"
+          ><img src="/Icons/info-32.png" alt="About page icon" /><span
+            class="label"
+            >ABOUT</span
+          ></a
+        >
+        <a href="#contact" id="contact" class="image-container"
+          ><img src="/Icons/message-32.png" alt="Contact page icon" /><span
+            class="label"
+            >CONTACT</span
+          ></a
+        >
+      </div>
+      <!-- Log in form -->
+      <!-- No login name or password are required as there is no authentication action in the back end-->
+      <div class="login-form-wrapper">
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+          <button id="submit" type="button">Log in</button>
+        </form>
+      </div>
+      <div class="aboutInfo">
+        <h2 class="about">About</h2>
+        <p class="aboutPara">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eaque nam
+          blanditiis ad maiores sit iste, ipsa sequi aspernatur in error saepe
+          repudiandae modi, natus quia dignissimos consequuntur velit fugit
+          corrupti voluptate dolorum id quibusdam possimus. Assumenda facilis
+          recusandae fuga expedita ad possimus quo optio natus fugit unde
+          aliquid beatae non doloribus, quod vitae amet numquam commodi
+          exercitationem similique aperiam esse nisi distinctio magni at!
+          Voluptate expedita aut assumenda ducimus corporis! Quibusdam tenetur
+          voluptate sunt eum quos omnis ipsam dolor excepturi dolores. Ipsam
+          obcaecati, maiores asperiores libero dolores omnis repellendus quia
+          magni, sit eligendi autem. Beatae veniam at quae facilis.
+        </p>
+      </div>
+      <div class="aboutInfo">
+        <h2 class="about">About</h2>
+        <p class="aboutPara">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eaque nam
+          blanditiis ad maiores sit iste, ipsa sequi aspernatur in error saepe
+          repudiandae modi, natus quia dignissimos consequuntur velit fugit
+          corrupti voluptate dolorum id quibusdam possimus. Assumenda facilis
+          recusandae fuga expedita ad possimus quo optio natus fugit unde
+          aliquid beatae non doloribus, quod vitae amet numquam commodi
+          exercitationem similique aperiam esse nisi distinctio magni at!
+          Voluptate expedita aut assumenda ducimus corporis! Quibusdam tenetur
+          voluptate sunt eum quos omnis ipsam dolor excepturi dolores. Ipsam
+          obcaecati, maiores asperiores libero dolores omnis repellendus quia
+          magni, sit eligendi autem. Beatae veniam at quae facilis.
+        </p>
+      </div>
+    </div>
+    <!-- The Footer -->
+    <footer>
+      <div class="pageFooter">
+        <div class="footerNav">
+          <nav>
+            <a href="./home.html">Home</a>
+            <a href="./Staff.html">Staff</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+          </nav>
+          <h4>&copy; Copyright Oenghus Walsh 2023</h4>
+        </div>
+      </div>
+    </footer>
+    <script src="/JavaScript/script.js"></script>
+  </body>
+</html>

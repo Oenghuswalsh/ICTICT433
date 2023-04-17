@@ -1,0 +1,445 @@
+body {
+  margin: 1em;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* Style for the Header div */
+.pageHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0066ff;
+}
+/* Style for the Header Logol website name div */
+.logoName {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 1em;
+}
+/* Style for the Header Webpage logo*/
+.logo {
+  font-size: 4em;
+  line-height: 1;
+  margin: 14px 0;
+  padding: 0;
+}
+/* Style for the Header Webpage name*/
+h2 {
+  font-size: 2.5em;
+  line-height: normal;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.siteName {
+  font-size: 2em;
+  line-height: 1;
+  margin: 0 0 7px 0;
+  padding: 0;
+}
+/* Style for the Header login and avatar image div*/
+.userAvatar {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: right;
+  margin-right: 1em;
+}
+/* Style the Header login button*/
+.loginBtn {
+  display: flex;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  font-size: 2em;
+}
+/* Style for the log out button*/
+.logoutBtnContainer {
+  display: none;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  font-size: 2em;
+}
+/* Style for the Header login button hover*/
+.loginBtn:hover {
+  font-size: 2.5em;
+}
+/* Style for the Header login user name*/
+.userName {
+  color: white;
+  justify-self: center;
+  margin: 0 1em;
+  font-size: 2em;
+}
+/* Style for the Header user avatar image*/
+.avatarImg {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+/* Style for the log in form*/
+.login-form-wrapper {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 30%;
+  padding: 10px;
+  background-color: #9747ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+.login-form-wrapper input[type="text"],
+.login-form-wrapper input[type="password"] {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.login-form-wrapper button[type="button"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.login-form-wrapper button[type="button"]:hover {
+  border: solid 2px white;
+  border-radius: 5px;
+}
+
+/* Style for the sidebar */
+.sideBar {
+  min-height: 65vh;
+  width: 70px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  padding-top: 1em;
+}
+
+/* Style for the sidebar Icons */
+.sideBar a {
+  padding: 5px 19px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+/* Style for the sidebar Icons on mouse-over */
+.sideBar a img:hover {
+  display: block;
+  border: white solid 2px;
+  border-radius: 5px;
+}
+.label {
+  position: relative;
+  width: 70px;
+  text-align: center;
+  top: 5px;
+  left: -20px;
+  background-color: rgb(232, 16, 16);
+  color: #007bff;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: none;
+  white-space: nowrap;
+}
+
+.image-container:hover .label {
+  display: block;
+}
+
+/* Style for main dashbody body */
+.column.dashboard {
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 10px 10px;
+  padding-bottom: 0;
+}
+.column.dashboard a {
+  text-decoration: none;
+}
+
+.column.dashboard h2:hover {
+  background-color: #9747ff;
+  border: 2px solid #9747ff;
+}
+.column.dashboard img {
+  height: 400px;
+  width: 100%;
+}
+
+.mainBody {
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  background-color: #f5f5f5;
+  height: max-content;
+}
+.mainBodySubDiv {
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+}
+.banner {
+  width: 100vh;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 50px;
+}
+.bodyName {
+  color: black;
+  font-size: 4em;
+  line-height: 1;
+  margin: 14px 0;
+  padding: 0;
+  text-align: center;
+}
+h2.bodyMessage {
+  font-size: 2em;
+  text-align: left;
+  line-height: 1;
+  margin: 0 0 7px 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+}
+/* Style for the CRM cards on staff and project pages*/
+.dashboards {
+  display: none;
+  width: 100%;
+  margin: 10px 10px;
+  padding-bottom: 0;
+}
+.staffDashboard {
+  display: none;
+  margin: 50px 100px;
+  padding-bottom: 0;
+}
+
+/* Style for the CRM cards */
+.cardsBlock {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25px;
+}
+
+.processCards {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 25px 0 25px;
+}
+
+.card {
+  width: 100%;
+  background-color: white;
+}
+.portlet .card h3 {
+  background-color: #0066ff;
+  color: white;
+}
+
+.staffPortlet {
+  display: inline-block;
+  width: 600px;
+}
+
+.customerCard {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-content: center;
+  overflow: hidden;
+}
+
+.cardH2 h2 {
+  background-color: #0066ff;
+  color: white;
+  font-size: 2.5em;
+  padding: 16px 0;
+}
+/* Style for draggable menu */
+.drag ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.drag li {
+  margin: 5px;
+  padding: 5px;
+  width: 150px;
+}
+
+/* Style the Footer div */
+footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+.pageFooter {
+  display: flex;
+  flex-direction: column;
+  background-color: #0066ff;
+}
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav {
+  padding-top: 1em;
+}
+nav a {
+  padding: 0 1em;
+}
+
+/*Style for the draggable cards */
+
+.column {
+  display: flex;
+  align-content: center;
+  width: 600px;
+  padding-bottom: 100px;
+}
+.portlet {
+  margin: 0.3em;
+  padding: 0.3em;
+  display: inline-block;
+  width: 45%;
+}
+.portlet-header {
+  padding: 0.2em 0.3em;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.portlet-content {
+  padding: 0.4em;
+}
+.portlet-placeholder {
+  border: 1px dotted black;
+  margin: 0 1em 1em 0;
+  width: 45%;
+  height: 50px;
+}
+/* Style for tabs inside tabs */
+.ui-tabs-vertical {
+  width: 55em;
+}
+.ui-tabs-vertical .ui-tabs-nav {
+  padding: 0.2em 0.1em 0.2em 0.2em;
+  float: left;
+  width: 12em;
+}
+.ui-tabs-vertical .ui-tabs-nav li {
+  clear: left;
+  width: 100%;
+  border-bottom-width: 1px !important;
+  border-right-width: 0 !important;
+  margin: 0 -1px 0.2em 0;
+}
+.ui-tabs-vertical .ui-tabs-nav li a {
+  display: block;
+}
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+  padding-bottom: 0;
+  padding-right: 0.1em;
+  border-right-width: 1px;
+}
+.ui-tabs-vertical .ui-tabs-panel {
+  padding: 1em;
+  float: right;
+  width: 40em;
+}
+
+.staffPortlet li.liName,
+li.srName,
+li.emailAd,
+li.PhoneN {
+  padding: 3px 0 3px 20px;
+  list-style-type: none;
+  background-color: #f5f5f5;
+}
+/* Style for contact form */
+
+.contactUs h1 {
+  margin: 0 0 20px;
+  font-weight: 400;
+  color: white;
+}
+.contactUs form p {
+  margin: 0 0 5px;
+  color: white;
+}
+.contactUs .main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #1c87c9;
+}
+.contactUs form {
+  padding: 25px;
+  margin: 25px;
+  box-shadow: 0 2px 5px #f5f5f5;
+  background: #9747ff;
+}
+
+.contactUs input,
+textarea {
+  font-family: Roboto, Arial, sans-serif;
+  width: calc(100% - 18px);
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #0066ff;
+  border-radius: 5px;
+  outline: none;
+}
+.contactUs input::placeholder {
+  color: #666;
+}
+.contactUs button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #0066ff;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.contactUs button:hover {
+  border: solid 2px white;
+  border-radius: 5px;
+}
+//Styles for about page
+.aboutInfo {
+  display: block;
+  justify-content: center;
+  align-content: center;
+}
+h2.about {
+  display: block;
+  color: #000000;
+}
+.aboutPara {
+  color: #000000;
+}
+.aboutInfo {
+  margin: 1em;
+}
