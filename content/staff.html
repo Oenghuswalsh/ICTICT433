@@ -5,10 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRM Staff Page</title>
+    <script>
+      // the following JavaScript was sourced from jQuery.com
+      //Script for tabs card
+      //Script for tabs inside the tabs
+      $(function () {
+        $("#tabs").tabs();
+        $("#tabsPt").tabs();
+        $("#tabsPt li").removeClass("ui-corner-top").addClass("ui-corner-left");
+        $("#tabsFt").tabs();
+        $("#tabsFt li").removeClass("ui-corner-top").addClass("ui-corner-left");
+        $("#tabsC").tabs();
+        $("#tabsC li").removeClass("ui-corner-top").addClass("ui-corner-left");
+        $("#tabsCr").tabs();
+        $("#tabsCr li").removeClass("ui-corner-top").addClass("ui-corner-left");
+      });
+    </script>
   </head>
   <body>
     <div class="dashboards">
-      <div class="portlet staffPortlet">
+      <div class="portlet">
         <!--The Staff card with selectable tabs-->
         <!-- Tab card menus HTML and JS sourced from jQuery.com-->
         <div class="card cardH2">

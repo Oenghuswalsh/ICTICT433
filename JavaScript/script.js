@@ -12,10 +12,37 @@ const loginBtn = document.querySelector(".loginBtn");
 const logoutBtnContainer = document.querySelector(".logoutBtnContainer");
 const dashboards = document.querySelector(".dashboards");
 
+$(function () {
+  var isLoggedIn = localStorage.getItem("loggedIn");
+  if (!isLoggedIn) {
+    $("#content").empty();
+  } else {
+    loadContent();
+    $("nav a").click(function () {
+      var pageLoad = $(this).attr("id");
+      loadContent(pageLoad);
+    });
+    if (window.location.hash) {
+      var reloadContent = window.location.hash.substring(1);
+
+      $("#content").load("content/" + reloadContent + ".html");
+    }
+  }
+  $("#logout-button").click(function () {
+    $("#content").empty();
+  });
+});
+
+function loadContent(pageLoad) {
+  $("#content").load("content/" + pageLoad + ".html");
+}
+
+console.log(content);
 // Check if the user is already logged in
 if (localStorage.getItem("loggedIn") === "true") {
   // If User is already logged in, show user profile
   showUserProfile();
+  loadContent("home");
 }
 // When user clickes on log in button show log in form
 loginButton.addEventListener("click", () => {
@@ -36,6 +63,7 @@ submitButton.addEventListener("click", (event) => {
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("username", username.value);
     showUserProfile();
+    loadContent("home");
   }
 });
 
@@ -58,16 +86,7 @@ function showHome() {
   if (loginBtn) {
     loginBtn.style.display = "flex";
   }
-  // Hide Dashboard
-  var columnDashboard = document.querySelector(".column.dashboard");
-  if (columnDashboard) {
-    columnDashboard.style.display = "none";
-  }
-  // Hide CRM cards on Project and Staff pages
-  var dashboards = document.querySelector(".dashboards");
-  if (dashboards) {
-    dashboards.style.display = "none";
-  }
+
   // Hide user name
   var logInNameContainer = document.querySelector(".userName");
   if (logInNameContainer) {
@@ -106,17 +125,6 @@ function showUserProfile() {
   var logInNameContainer = document.querySelector(".userName");
   if (logInNameContainer) {
     logInNameContainer.textContent = username.value;
-    console.log(username.value);
-  }
-  // Display Dashboard on home page
-  var columnDashboard = document.querySelector(".column.dashboard");
-  if (columnDashboard) {
-    columnDashboard.style.display = "block";
-  }
-  // Display CRM cards in Staff and Project pages
-  var dashboards = document.querySelector(".dashboards");
-  if (dashboards) {
-    dashboards.style.display = "inline-block";
   }
 }
 // Show username on page load if user is logged in
@@ -127,6 +135,7 @@ window.addEventListener("load", () => {
     if (logInNameContainer && username) {
       logInNameContainer.textContent = username;
     }
+    loadContent("home");
   }
 });
 // Remove username from local storage if user is not logged in
@@ -141,7 +150,7 @@ function logout() {
   localStorage.removeItem("username");
 
   // Redirect to login page
-  window.location.href = "./home.html";
+  window.location.href = "./index.html";
 }
 
 // Log out button event listener

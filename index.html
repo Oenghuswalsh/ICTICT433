@@ -12,32 +12,6 @@
     />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-      // the following JavaScript was sourced from jQuery.com
-      // Script for draggable cards
-      $(function () {
-        $(".column").sortable({
-          connectWith: ".column",
-          handle: ".portlet-header",
-          placeholder: "portlet-placeholder ui-corner-all",
-        });
-
-        $(".portlet")
-          .addClass(
-            "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
-          )
-          .find(".portlet-header")
-          .addClass("ui-widget-header ui-corner-all");
-      });
-      $(function () {
-        $("nav a").click(function () {
-          var pageLoad = $(this).attr("id");
-          alert(pageLoad);
-
-          $("#content").load("content/" + pageLoad + ".html");
-        });
-      });
-    </script>
   </head>
   <body>
     <!-- The Header -->
@@ -74,7 +48,7 @@
             >HOME</span
           ></a
         >
-        <a href="#Staff" id="staff" class="image-container"
+        <a href="#staff" id="staff" class="image-container"
           ><img src="/Icons/customers-32.png" alt="Customer icon" /><span
             class="label"
             >STAFF</span
@@ -111,27 +85,6 @@
         </form>
       </div>
       <div id="content"></div>
-      <div class="column dashboard">
-        <!--The Dashboard div contains the customizable CRM elements-->
-        <!--The Staff card. On this login page the staff card and Project card are blank images with herf links to the CRM content.-->
-        <div class="portlet">
-          <div class="card cardH2">
-            <a href="#">
-              <h2 class="portlet-header">Staff</h2>
-            </a>
-            <img src="./images/Staff-Dashboard.png" alt="" />
-          </div>
-        </div>
-        <!--The Products card-->
-        <div class="portlet">
-          <div class="card cardH2">
-            <a href="#">
-              <h2 class="portlet-header">Projects</h2>
-            </a>
-            <img src="./images/Projects-Dashboard.png" alt="" />
-          </div>
-        </div>
-      </div>
     </div>
     <!-- The Footer -->
     <footer>

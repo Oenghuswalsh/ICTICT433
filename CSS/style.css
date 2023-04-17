@@ -165,7 +165,7 @@ h2 {
 
 /* Style for main dashbody body */
 .column.dashboard {
-  display: none;
+  display: block;
   position: relative;
   width: 100%;
   margin: 10px 10px;
@@ -221,13 +221,13 @@ h2.bodyMessage {
 }
 /* Style for the CRM cards on staff and project pages*/
 .dashboards {
-  display: none;
-  width: 100%;
+  display: block;
+  width: 45%;
   margin: 10px 10px;
   padding-bottom: 0;
 }
 .staffDashboard {
-  display: none;
+  display: block;
   margin: 50px 100px;
   padding-bottom: 0;
 }
@@ -256,7 +256,7 @@ h2.bodyMessage {
 
 .staffPortlet {
   display: inline-block;
-  width: 600px;
+  width: 45%;
 }
 
 .customerCard {
@@ -314,14 +314,14 @@ nav a {
 .column {
   display: flex;
   align-content: center;
-  width: 600px;
+  width: 100%;
   padding-bottom: 100px;
 }
 .portlet {
   margin: 0.3em;
   padding: 0.3em;
   display: inline-block;
-  width: 45%;
+  width: 600px;
 }
 .portlet-header {
   padding: 0.2em 0.3em;
@@ -335,7 +335,7 @@ nav a {
 .portlet-placeholder {
   border: 1px dotted black;
   margin: 0 1em 1em 0;
-  width: 45%;
+  width: 600px;
   height: 50px;
 }
 /* Style for tabs inside tabs */

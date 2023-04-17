@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Home Page</title>
+    <script>
+      // the following JavaScript was sourced from jQuery.com
+      // Script for draggable cards
+      $(function () {
+        $(".column").sortable({
+          connectWith: ".column",
+          handle: ".portlet-header",
+          placeholder: "portlet-placeholder ui-corner-all",
+        });
+
+        $(".portlet")
+          .addClass(
+            "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+          )
+          .find(".portlet-header")
+          .addClass("ui-widget-header ui-corner-all");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="column dashboard">
+      <!--The Dashboard div contains the customizable CRM elements-->
+      <!--The Staff card. On this login page the staff card and Project card are blank images with herf links to the CRM content.-->
+      <div class="portlet">
+        <div class="card cardH2">
+          <a href="#">
+            <h2 class="portlet-header">Staff</h2>
+          </a>
+          <img src="./images/Staff-Dashboard.png" alt="" />
+        </div>
+      </div>
+      <!--The Products card-->
+      <div class="portlet">
+        <div class="card cardH2">
+          <a href="#">
+            <h2 class="portlet-header">Projects</h2>
+          </a>
+          <img src="./images/Projects-Dashboard.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
