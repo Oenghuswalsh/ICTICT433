@@ -159,6 +159,9 @@ h2 {
   white-space: nowrap;
 }
 
+.home:hover .label,
+.staff:hover .label,
+.projects:hover .label,
 .image-container:hover .label {
   display: block;
 }

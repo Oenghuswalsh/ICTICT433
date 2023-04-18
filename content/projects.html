@@ -8,22 +8,25 @@
     <script>
       // the following JavaScript was sourced from jQuery.com
       //Script for accordion with sortable menus
-      let h3Elements = [];
       $(function () {
-        $("#accordion")
-          .accordion({
-            header: "> div > h3",
-          })
-          .sortable({
-            axis: "y",
-            handle: "h3",
-            stop: function (event, ui) {
-              // Refresh accordion to handle new order
-              $(this).accordion("refresh");
-              // Initialize the numbering on page load
-              updateNumbering();
-            },
-          });
+        {
+          let h3Elements = [];
+
+          $("#accordion")
+            .accordion({
+              header: "> div > h3",
+            })
+            .sortable({
+              axis: "y",
+              handle: "h3",
+              stop: function (event, ui) {
+                // Refresh accordion to handle new order
+                $(this).accordion("refresh");
+                // Initialize the numbering on page load
+                updateNumbering();
+              },
+            });
+        }
 
         // Update the numbering of the menus based on their order
         function updateNumbering() {

@@ -11,43 +11,43 @@ const logoutButton = document.getElementById("logout-button");
 const loginBtn = document.querySelector(".loginBtn");
 const logoutBtnContainer = document.querySelector(".logoutBtnContainer");
 const dashboards = document.querySelector(".dashboards");
+var isLoggedIn = localStorage.getItem("loggedIn");
+var pageLoad = null;
 
+// If user is logged in load content for pages from nav icon click
+if (isLoggedIn) {
+  $("nav a").click(function () {
+    var pageLoad = $(this).attr("class");
+    loadContent(pageLoad);
+  });
+  $(document).on("click", "nav a", function () {
+    var pageLoad = $(this).attr("class");
+    loadContent(pageLoad);
+  });
+}
+// If user is not logged in, clear content and listen for login button click
+// otherwise the user is logged in so show the user home page
 $(function () {
-  var isLoggedIn = localStorage.getItem("loggedIn");
   if (!isLoggedIn) {
     $("#content").empty();
-  } else {
-    loadContent();
-    $("nav a").click(function () {
-      var pageLoad = $(this).attr("id");
-      loadContent(pageLoad);
+    loginButton.addEventListener("click", () => {
+      showLoginForm();
     });
-    if (window.location.hash) {
-      var reloadContent = window.location.hash.substring(1);
-
-      $("#content").load("content/" + reloadContent + ".html");
-    }
+  } else {
+    showUserProfile();
   }
-  $("#logout-button").click(function () {
-    $("#content").empty();
-  });
 });
+// If the address bar has a HASH value, retrive that value, remove the HASH and save it as a reloadContent variable
+// use that reLoadContent to refrenh the page when refresh is clicked
+if (window.location.hash && isLoggedIn) {
+  var reloadContent = window.location.hash.substring(1);
+
+  $("#content").load("content/" + reloadContent + ".html");
+}
 
 function loadContent(pageLoad) {
   $("#content").load("content/" + pageLoad + ".html");
 }
-
-console.log(content);
-// Check if the user is already logged in
-if (localStorage.getItem("loggedIn") === "true") {
-  // If User is already logged in, show user profile
-  showUserProfile();
-  loadContent("home");
-}
-// When user clickes on log in button show log in form
-loginButton.addEventListener("click", () => {
-  showLoginForm();
-});
 
 // Display log in form
 function showLoginForm() {
@@ -64,6 +64,15 @@ submitButton.addEventListener("click", (event) => {
     localStorage.setItem("username", username.value);
     showUserProfile();
     loadContent("home");
+    $("nav a").click(function () {
+      var pageLoad = $(this).attr("class");
+      loadContent(pageLoad);
+    });
+    $(document).on("click", "nav a", function () {
+      var pageLoad = $(this).attr("class");
+      loadContent(pageLoad);
+      console.log(pageLoad);
+    });
   }
 });
 
@@ -71,6 +80,7 @@ submitButton.addEventListener("click", (event) => {
 logoutButton.addEventListener("click", () => {
   localStorage.setItem("loggedIn", "false");
   localStorage.removeItem("username", username.value);
+  $("#content").empty();
   showHome();
 });
 
@@ -135,7 +145,6 @@ window.addEventListener("load", () => {
     if (logInNameContainer && username) {
       logInNameContainer.textContent = username;
     }
-    loadContent("home");
   }
 });
 // Remove username from local storage if user is not logged in
