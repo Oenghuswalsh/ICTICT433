@@ -37,6 +37,7 @@ $(function () {
     showUserProfile();
   }
 });
+
 // If the address bar has a HASH value, retrive that value, remove the HASH and save it as a reloadContent variable
 // use that reLoadContent to refrenh the page when refresh is clicked
 if (window.location.hash && isLoggedIn) {

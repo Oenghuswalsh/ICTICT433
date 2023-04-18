@@ -118,6 +118,9 @@ h2 {
   border: solid 2px white;
   border-radius: 5px;
 }
+#content {
+  display: flex;
+}
 
 /* Style for the sidebar */
 .sideBar {
@@ -162,7 +165,8 @@ h2 {
 .home:hover .label,
 .staff:hover .label,
 .projects:hover .label,
-.image-container:hover .label {
+.about:hover .label,
+.contact:hover .label {
   display: block;
 }
 
@@ -305,10 +309,10 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-nav {
+footer nav {
   padding-top: 1em;
 }
-nav a {
+footer nav a {
   padding: 0 1em;
 }
 
@@ -371,7 +375,7 @@ nav a {
   width: 40em;
 }
 
-.staffPortlet li.liName,
+li.liName,
 li.srName,
 li.emailAd,
 li.PhoneN {
@@ -430,7 +434,7 @@ textarea {
   border: solid 2px white;
   border-radius: 5px;
 }
-//Styles for about page
+/*Styles for about page*/
 .aboutInfo {
   display: block;
   justify-content: center;
