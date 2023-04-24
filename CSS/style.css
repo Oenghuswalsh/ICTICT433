@@ -178,6 +178,11 @@ h2 {
   margin: 10px 10px;
   padding-bottom: 0;
 }
+#dashboardHeader h1 {
+  color: #000000;
+  margin: 0;
+  padding-left: 10px;
+}
 .column.dashboard a {
   text-decoration: none;
 }
@@ -229,7 +234,7 @@ h2.bodyMessage {
 /* Style for the CRM cards on staff and project pages*/
 .dashboards {
   display: block;
-  width: 45%;
+  width: 100%;
   margin: 10px 10px;
   padding-bottom: 0;
 }
@@ -273,7 +278,9 @@ h2.bodyMessage {
   align-content: center;
   overflow: hidden;
 }
-
+.dashboards #accordion .group {
+  height: auto !important;
+}
 .cardH2 h2 {
   background-color: #0066ff;
   color: white;
