@@ -82,7 +82,7 @@ h2 {
   border-radius: 50%;
 }
 /* Style for the log in form*/
-.login-form-wrapper {
+.loginFormWrapper {
   display: none;
   position: absolute;
   top: 20%;
@@ -93,8 +93,8 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 9999;
 }
-.login-form-wrapper input[type="text"],
-.login-form-wrapper input[type="password"] {
+.loginFormWrapper input[type="text"],
+.loginFormWrapper input[type="password"] {
   display: block;
   width: 95%;
   padding: 10px;
@@ -103,7 +103,7 @@ h2 {
   border-radius: 5px;
   font-size: 16px;
 }
-.login-form-wrapper button[type="button"] {
+.loginFormWrapper button[type="button"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -114,7 +114,7 @@ h2 {
   font-size: 16px;
   cursor: pointer;
 }
-.login-form-wrapper button[type="button"]:hover {
+.loginFormWrapper button[type="button"]:hover {
   border: solid 2px white;
   border-radius: 5px;
 }
@@ -337,7 +337,7 @@ footer nav a {
   display: inline-block;
   width: 600px;
 }
-.portlet-header {
+.portletHeader {
   padding: 0.2em 0.3em;
   margin-bottom: 0.5em;
   position: relative;
@@ -401,7 +401,7 @@ li.PhoneN {
   margin: 0 0 5px;
   color: white;
 }
-.contactUs .main-block {
+.contactUs .mainBlock {
   display: flex;
   flex-direction: column;
   justify-content: center;

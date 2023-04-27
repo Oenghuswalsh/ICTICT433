@@ -11,7 +11,7 @@
       $(function () {
         $(".column").sortable({
           connectWith: ".column",
-          handle: ".portlet-header",
+          handle: ".portletHeader",
           placeholder: "portlet-placeholder ui-corner-all",
         });
 
@@ -19,7 +19,7 @@
           .addClass(
             "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
           )
-          .find(".portlet-header")
+          .find(".portletHeader")
           .addClass("ui-widget-header ui-corner-all");
       });
     </script>
@@ -27,22 +27,28 @@
   <body>
     <div class="column dashboard">
       <!--The Dashboard div contains the customizable CRM elements-->
-      <!--The Staff card. On this login page the staff card and Project card are blank images with herf links to the CRM content.-->
+      <!--On this login page the staff card and Project card are blank images with herf links to the CRM content.-->
       <div class="portlet">
         <nav class="card cardH2">
           <a href="#staff" class="staff">
-            <h2 class="portlet-header">Staff</h2>
+            <h2 class="portletHeader">Staff</h2>
           </a>
-          <img src="./images/Staff-Dashboard.png" alt="" />
+          <img
+            src="./images/Staff-Dashboard.png"
+            alt="Image of an accordion menu with no data visable."
+          />
         </nav>
       </div>
       <!--The Products card-->
       <div class="portlet">
         <nav class="card cardH2">
           <a href="#projects" class="projects">
-            <h2 class="portlet-header">Projects</h2>
+            <h2 class="portletHeader">Projects</h2>
           </a>
-          <img src="./images/Projects-Dashboard.png" alt="" />
+          <img
+            src="./images/Projects-Dashboard.png"
+            alt="Image of an accordion menu with no data visable."
+          />
         </nav>
       </div>
     </div>

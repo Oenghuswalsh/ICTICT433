@@ -1,5 +1,5 @@
-const loginButton = document.getElementById("login-button");
-const loginFormWrapper = document.querySelector(".login-form-wrapper");
+const loginButton = document.getElementById("loginButton");
+const loginFormWrapper = document.querySelector(".loginFormWrapper");
 const loginBtnContainer = document.querySelector(".loginBtnContainer");
 const avatarImg = document.querySelector(".avatarImg");
 const columnDashboard = document.querySelector(".column.dashboard");
@@ -7,7 +7,7 @@ const columnDashboard = document.querySelector(".column.dashboard");
 const submitButton = document.getElementById("submit");
 const logInNameContainer = document.querySelector(".userName");
 const username = document.getElementById("username");
-const logoutButton = document.getElementById("logout-button");
+const logoutButton = document.getElementById("logoutButton");
 const loginBtn = document.querySelector(".loginBtn");
 const logoutBtnContainer = document.querySelector(".logoutBtnContainer");
 const dashboards = document.querySelector(".dashboards");
@@ -22,9 +22,22 @@ if (isLoggedIn) {
   });
   $(document).on("click", "nav a", function () {
     var pageLoad = $(this).attr("class");
+
     loadContent(pageLoad);
   });
+
+  // Function to track tooltip
+  $(function () {
+    $(document).tooltip({
+      track: true,
+      position: {
+        my: "left+50px center",
+        at: "right center",
+      },
+    });
+  });
 }
+
 // If user is not logged in, clear content and listen for login button click
 // otherwise the user is logged in so show the user home page
 $(function () {
@@ -52,7 +65,7 @@ function loadContent(pageLoad) {
 
 // Display log in form
 function showLoginForm() {
-  var loginFormWrapper = document.querySelector(".login-form-wrapper");
+  var loginFormWrapper = document.querySelector(".loginFormWrapper");
   if (loginFormWrapper) {
     loginFormWrapper.style.display = "block";
   }
@@ -65,10 +78,10 @@ submitButton.addEventListener("click", (event) => {
     localStorage.setItem("username", username.value);
     showUserProfile();
     loadContent("home");
-    $("nav a").click(function () {
-      var pageLoad = $(this).attr("class");
-      loadContent(pageLoad);
-    });
+    // $("nav a").click(function () {
+    //   var pageLoad = $(this).attr("class");
+    //   loadContent(pageLoad);
+    // });
     $(document).on("click", "nav a", function () {
       var pageLoad = $(this).attr("class");
       loadContent(pageLoad);
@@ -112,7 +125,7 @@ function showHome() {
 
 // hide log in form when log in button on log in form is clicked
 function showUserProfile() {
-  var loginFormWrapper = document.querySelector(".login-form-wrapper");
+  var loginFormWrapper = document.querySelector(".loginFormWrapper");
   if (loginFormWrapper) {
     loginFormWrapper.style.display = "none";
   }

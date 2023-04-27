@@ -24,10 +24,10 @@
           <h2 class="siteName">Customer Records Management</h2>
         </div>
         <div class="userAvatar">
-          <button id="login-button" class="loginBtn loginBtnContainer">
+          <button id="loginButton" class="loginBtn loginBtnContainer">
             Log in
           </button>
-          <button id="logout-button" class="loginBtn logoutBtnContainer">
+          <button id="logoutButton" class="loginBtn logoutBtnContainer">
             Log out
           </button>
           <h2 class="userName" id="logInName"></h2>
@@ -42,25 +42,29 @@
     <div class="mainBody">
       <!-- Sidebar menu icons-->
       <!-- herf="" navigation for all pages, span with class="label" to add the pop up icon name-->
+      <!-- Mouse hover tooltip displays for Home, Staff, Projects menu items-->
       <!-- Icons sourced form icons8.com-->
       <nav class="sideBar">
         <a href="#home" class="home"
-          ><img src="/Icons/home-32.png" alt="Home page icon" /><span
-            class="label"
-            >HOME</span
-          ></a
+          ><img
+            title="Return to the dashboard"
+            src="/Icons/home-32.png"
+            alt="Home page icon"
+          /><span class="label">HOME</span></a
         >
         <a href="#staff" class="staff"
-          ><img src="/Icons/customers-32.png" alt="Customer icon" /><span
-            class="label"
-            >STAFF</span
-          ></a
+          ><img
+            title="View staff database and perform add and edit actions."
+            src="/Icons/customers-32.png"
+            alt="Customer icon"
+          /><span class="label">STAFF</span></a
         >
         <a href="#projects" class="projects"
-          ><img src="/Icons/folder-32.png" alt="Folder icon" /><span
-            class="label"
-            >PROJECTS</span
-          ></a
+          ><img
+            title="View current project statuses and rearrange priorities."
+            src="/Icons/folder-32.png"
+            alt="Folder icon"
+          /><span class="label">PROJECTS</span></a
         >
         <a href="#about" class="about"
           ><img src="/Icons/info-32.png" alt="About page icon" /><span
@@ -77,8 +81,8 @@
       </nav>
       <!-- Log in form -->
       <!-- No login name or password are required as there is no authentication action in the back end-->
-      <div class="login-form-wrapper">
-        <form id="login-form">
+      <div class="loginFormWrapper">
+        <form id="loginForm">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required />
           <label for="password">Password:</label>
@@ -94,13 +98,27 @@
       </div>
     </div>
     <!-- The Footer -->
+    <!-- herf="" navigation for all pages-->
+    <!-- Mouse hover tooltip displays for Home, Staff, Projects menu items-->
     <footer>
       <div class="pageFooter">
         <div class="footerNav">
           <nav>
-            <a href="#home" class="home">Home</a>
-            <a href="#staff" class="staff">Staff</a>
-            <a href="#projects" class="projects">Projects</a>
+            <a href="#home" class="home" title="Return to the dashboard"
+              >Home</a
+            >
+            <a
+              href="#staff"
+              class="staff"
+              title="View staff database and perform add and edit actions."
+              >Staff</a
+            >
+            <a
+              href="#projects"
+              class="projects"
+              title="View current project statuses and rearrange priorities."
+              >Projects</a
+            >
             <a href="#about" class="about">About</a>
             <a href="#contact" class="contact">Contact</a>
           </nav>

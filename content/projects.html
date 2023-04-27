@@ -28,7 +28,7 @@
             });
         }
 
-        // Update the numbering of the menus based on their order
+        // Script to update the numbering of the menus based on their order
         function updateNumbering() {
           $("#accordion h3").each(function (index) {
             var clonedHeader = $(this).clone(); // create a clone of the header
@@ -52,12 +52,11 @@
   </head>
   <body>
     <div class="dashboards">
-      <!--The Dashboard div contains the customizable CRM elements-->
       <div class="portlet">
         <!-- Projects card with accordion menus that can be re structured (numbered 1- 5)-->
         <!-- Accordion menus HTML and JS sourced from jQuery.com-->
         <div class="card cardH2">
-          <h2 class="portlet-header">Projects</h2>
+          <h2 class="portletHeader">Projects</h2>
           <div class="card" id="accordion">
             <div class="group">
               <h3>Wealth Builder</h3>

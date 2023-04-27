@@ -4,124 +4,142 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRM Project Page</title>
+    <title>CRM Staff Page</title>
 
     <script>
-      // the following JavaScript was sourced from jQuery.com
+      // Sections of the following JavaScript was sourced from jQuery.com
+      // Comments have been added above my own custom JavaScritp
       //Script for accordion with sortable menus
       $(function () {
-        $("#accordion").accordion();
+        {
+          let h3Elements = [];
+          $("#accordion")
+            .accordion({
+              collapsible: true,
+              active: false,
+              heightStyle: "content",
+              header: "> div > h3",
+            })
+            .sortable({
+              axis: "y",
+              handle: "h3",
+              stop: function (event, ui) {
+                // Refresh accordion to handle new order
+                $(this).accordion("refresh");
+              },
+            });
+        }
       });
-      // Script for staff members data
-      // staffMemeber data objects
-      const staff1 = {
+      //Script for staff members data
+      //staff Memeber data objects
+      const employee1 = {
         firstName: "John",
         lastName: "Connor",
         email: "J.Conner@example.com",
         phone: "123-456-7890",
       };
 
-      const staff2 = {
+      const employee2 = {
         firstName: "Mick",
         lastName: "Smith",
         email: "M.Smith@example.com",
         phone: "555-555-1212",
       };
 
-      const staff3 = {
+      const employee3 = {
         firstName: "Bob",
         lastName: "Murphy",
         email: "B.Murphy@example.com",
         phone: "987-654-3210",
       };
-      const staff4 = {
+      const employee4 = {
         firstName: "Mary",
         lastName: "Wallace",
         email: "M.Wallace@example.com",
         phone: "123-456-7890",
       };
 
-      const staff5 = {
+      const employee5 = {
         firstName: "Alice",
         lastName: "Brown",
         email: "A.Brown@example.com",
         phone: "555-555-1212",
       };
 
-      const staff6 = {
+      const employee6 = {
         firstName: "Thomas",
         lastName: "Burke",
         email: "T.Burke@example.com",
         phone: "987-654-3210",
       };
 
-      const staff7 = {
+      const employee7 = {
         firstName: "Benjamin",
         lastName: "Martin",
         email: "b.martin@example.com",
         phone: "123-456-7890",
       };
 
-      const staff8 = {
+      const employee8 = {
         firstName: "James",
         lastName: "Anderson",
         email: "james.anderson@example.com",
         phone: "555-555-1212",
       };
 
-      const staff9 = {
+      const employee9 = {
         firstName: "Sarah",
         lastName: ">Williams",
         email: "sarah.williams@example.com",
         phone: "987-654-3210",
       };
-      const staff10 = {
+      const employee10 = {
         firstName: "Samantha",
         lastName: "Lee",
         email: "samantha.lee@example.com",
         phone: "123-456-7890",
       };
 
-      const staff11 = {
+      const employee11 = {
         firstName: "Emily",
         lastName: "Taylor",
         email: "emily.taylor@example.com",
         phone: "555-555-1212",
       };
 
-      const staff12 = {
+      const employee12 = {
         firstName: "William",
         lastName: "Johnson",
         email: "william.johnson@example.com",
         phone: "987-654-3210",
       };
       // staff data array
-      const staff = [
-        staff1,
-        staff2,
-        staff3,
-        staff4,
-        staff5,
-        staff6,
-        staff7,
-        staff8,
-        staff9,
-        staff10,
-        staff11,
-        staff12,
+      const employee = [
+        employee1,
+        employee2,
+        employee3,
+        employee4,
+        employee5,
+        employee6,
+        employee7,
+        employee8,
+        employee9,
+        employee10,
+        employee11,
+        employee12,
       ];
 
       let id;
 
       const dataContainer = document.querySelectorAll("h3");
-
+      // This 'for' loop sets the value of the 'id' variable to the 'id' attribute value of the selected <h3> element.
       for (let i = 0; i < dataContainer.length; i++) {
         dataContainer[i].addEventListener("click", function () {
           id = this.id;
         });
       }
       // Function to display staff data
-      function displayUserData(staff) {
+      function displayUserData(employee) {
         const fullTimeStaffDataContainer = document.getElementById(
           "fullTimeStaffDataContainer"
         );
@@ -144,10 +162,10 @@
           contractorsStaffDataContainer.innerHTML = "";
         }
 
-        const firstName = staff.firstName;
-        const lastName = staff.lastName;
-        const email = staff.email;
-        const phone = staff.phone;
+        const firstName = employee.firstName;
+        const lastName = employee.lastName;
+        const email = employee.email;
+        const phone = employee.phone;
 
         const userDataDiv = document.createElement("div");
         userDataDiv.classList.add("user-data");
@@ -213,10 +231,10 @@
         saveButton.textContent = "Save";
         saveButton.style.display = "none";
         saveButton.addEventListener("click", (event) => {
-          userData.firstName = firstNameInput.value;
-          userData.lastName = lastNameInput.value;
-          userData.email = emailInput.value;
-          userData.phone = phoneInput.value;
+          employee.firstName = firstNameInput.value;
+          employee.lastName = lastNameInput.value;
+          employee.email = emailInput.value;
+          employee.phone = phoneInput.value;
 
           firstNameInput.disabled = true;
           lastNameInput.disabled = true;
@@ -238,24 +256,24 @@
         }
       }
 
-      // Event listener for user selector
+      // Event listener for selecttion staff member seperated by staff catogery.
       const fullTimeSelector = document.getElementById("fullTimeSelector");
       fullTimeSelector.addEventListener("change", (event) => {
         const selectedUserIndex = event.target.value - 1;
-        const selectedUserData = staff[selectedUserIndex];
+        const selectedUserData = employee[selectedUserIndex];
         displayUserData(selectedUserData);
       });
 
       const partTimeSelector = document.getElementById("partTimeSelector");
       partTimeSelector.addEventListener("change", (event) => {
         const selectedUserIndex = event.target.value - 1;
-        const selectedUserData = staff[selectedUserIndex];
+        const selectedUserData = employee[selectedUserIndex];
         displayUserData(selectedUserData);
       });
       const casualSelector = document.getElementById("casualSelector");
       casualSelector.addEventListener("change", (event) => {
         const selectedUserIndex = event.target.value - 1;
-        const selectedUserData = staff[selectedUserIndex];
+        const selectedUserData = employee[selectedUserIndex];
         displayUserData(selectedUserData);
       });
       const contractorsSelector = document.getElementById(
@@ -263,67 +281,70 @@
       );
       contractorsSelector.addEventListener("change", (event) => {
         const selectedUserIndex = event.target.value - 1;
-        const selectedUserData = staff[selectedUserIndex];
+        const selectedUserData = employee[selectedUserIndex];
         displayUserData(selectedUserData);
       });
     </script>
   </head>
   <body>
     <div class="dashboards">
-      <!--The Dashboard div contains the customizable CRM elements-->
       <div class="portlet">
-        <!-- Projects card with accordion menus that can be re structured (numbered 1- 5)-->
+        <!-- Staff card with accordion menus that can be sorted by dragging-->
         <!-- Accordion menus HTML and JS sourced from jQuery.com-->
         <div class="card cardH2">
-          <h2 class="portlet-header">Staff</h2>
+          <h2 class="portletHeader">Employees</h2>
           <div class="card" id="accordion">
-            <h3 id="fullTimeStaff">Full-Time Staff</h3>
             <div class="group">
-              <label for="fullTimeSelector">Select Staff Member:</label>
-              <select id="fullTimeSelector">
-                <option value="0" selected disabled>Staff Members</option>
-                <option value="1">Staff Member 1</option>
-                <option value="2">Staff Member 2</option>
-                <option value="3">Staff Member 3</option>
-              </select>
-
-              <div id="fullTimeStaffDataContainer"></div>
+              <h3 id="fullTimeStaff">Full-Time empolyees</h3>
+              <div>
+                <label for="fullTimeSelector">Select Employee:</label>
+                <select id="fullTimeSelector">
+                  <option value="0" selected disabled>Employees</option>
+                  <option value="1">Employee 1</option>
+                  <option value="2">Employee 2</option>
+                  <option value="3">Employee 3</option>
+                </select>
+                <div id="fullTimeStaffDataContainer"></div>
+              </div>
             </div>
-            <h3 id="partTimeStaff">Part-Time Staff</h3>
             <div class="group">
-              <label for="partTimeSelector">Select Staff Member:</label>
-              <select id="partTimeSelector">
-                <option value="0" selected disabled>Staff Members</option>
-                <option value="4">Staff Member 4</option>
-                <option value="5">Staff Member 5</option>
-                <option value="6">Staff Member 6</option>
-              </select>
-
-              <div id="partTimeStaffDataContainer"></div>
+              <h3 id="partTimeStaff">Part-Time employees</h3>
+              <div>
+                <label for="partTimeSelector">Select Employee:</label>
+                <select id="partTimeSelector">
+                  <option value="0" selected disabled>Employees</option>
+                  <option value="4">Employee 4</option>
+                  <option value="5">Employee 5</option>
+                  <option value="6">Employee 6</option>
+                </select>
+                <div id="partTimeStaffDataContainer"></div>
+              </div>
             </div>
-            <h3 id="casualStaff">Casual Staff</h3>
             <div class="group">
-              <label for="casualSelector">Select Staff Member:</label>
-              <select id="casualSelector">
-                <option value="0" selected disabled>Staff Members</option>
-                <option value="7">Staff Member 7</option>
-                <option value="8">Staff Member 8</option>
-                <option value="9">Staff Member 9</option>
-              </select>
-
-              <div id="casualStaffDataContainer"></div>
+              <h3 id="casualStaff">Casual employees</h3>
+              <div>
+                <label for="casualSelector">Select Employee:</label>
+                <select id="casualSelector">
+                  <option value="0" selected disabled>Employees</option>
+                  <option value="7">Employee 7</option>
+                  <option value="8">Employee 8</option>
+                  <option value="9">Employee 9</option>
+                </select>
+                <div id="casualStaffDataContainer"></div>
+              </div>
             </div>
-            <h3 id="contractors">Contractors</h3>
             <div class="group">
-              <label for="contractorsSelector">Select Staff Member:</label>
-              <select id="contractorsSelector">
-                <option value="0" selected disabled>Staff Members</option>
-                <option value="10">Staff Member 10</option>
-                <option value="11">Staff Member 11</option>
-                <option value="12">Staff Member 12</option>
-              </select>
-
-              <div id="contractorsStaffDataContainer"></div>
+              <h3 id="contractors">Contractors</h3>
+              <div>
+                <label for="contractorsSelector">Select Contractor:</label>
+                <select id="contractorsSelector">
+                  <option value="0" selected disabled>Contractors</option>
+                  <option value="10">Contractor 10</option>
+                  <option value="11">Contractor 11</option>
+                  <option value="12">Contractor 12</option>
+                </select>
+                <div id="contractorsStaffDataContainer"></div>
+              </div>
             </div>
           </div>
         </div>
